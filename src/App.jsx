@@ -17,7 +17,7 @@ import { IoMdCode } from "react-icons/io";
 import { MdWorkOutline } from "react-icons/md";
 
 import social_media_img from "../src/assets/social-media-principal-image.png";
-import medical_plataform from "../src/assets/medical-plataform-principal-image.png";
+import medical_plataform from "../src/assets/medesk.png";
 import viti_plataform from "../src/assets/viti-principal-image.png";
 
 ///iconos
@@ -39,6 +39,7 @@ import developer_logo from "../src/assets/developer.png";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { MdOutlineTranslate } from "react-icons/md";
+import { BsPuzzle } from "react-icons/bs";
 
 function App() {
   return (
@@ -187,10 +188,7 @@ function App() {
                   </div>
                 </div>
                 {/*card 2*/}
-                <div
-                  className="second_section_content_card"
-                  style={{ gridTemplateColumns: "1fr auto", gap: "20px" }}
-                >
+                <div className="second_section_content_card">
                   <div className="second_section_content_info_content">
                     <div className="icon_container">
                       <div className="icon">
@@ -227,6 +225,7 @@ function App() {
               </div>
             </div>
           </section>
+
           {/*My Project section*/}
           <section className="second_section">
             <div className="second_section_container">
@@ -234,9 +233,105 @@ function App() {
                 <IoMdCode style={{ color: "#fff" }} />
                 <span>Proyectos</span>
               </div>
+
               <div className="second_section_content_container">
-                {/*card*/}
-                <div className="second_section_content_card">
+                {/*card 1*/}
+
+                <div className="section_proyect_content_card">
+                  <div className="second_section_content_info_content">
+                    <div className="icon_container">
+                      <div className="icon">
+                        <FaHandHoldingMedical />
+                      </div>
+                    </div>
+                    <div className="second_section_content_info">
+                      <span className="card-ttl">
+                        Gestor de Hisotriales Clinicos
+                      </span>
+                      <span className="sub-ttl" style={{ width: "80%" }}>
+                        Una ERP que le permite al profesional de la salud
+                        gestionar pacientes
+                      </span>
+                      <p className="paragraph" style={{ width: "90%" }}>
+                        Este proyecto es una red social que incluye su version
+                        mobile y su version web. Incluye un chat en tiempo real
+                        con amigos y solicitudes de mensajes, post y feed
+                        personalizado con recomendaciones
+                      </p>
+                      <div
+                        className="row"
+                        style={{
+                          gap: "7px",
+                          width: "80%",
+
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <div className="row third_section_span_container">
+                          <SiFastapi />
+                          <span>FastApi</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <AiOutlinePython />
+                          <span>Python</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <FaReact />
+                          <span>React</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <IoLogoJavascript />
+                          <span>Javascript</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <GrMysql />
+                          <span>MySQL</span>
+                        </div>
+                      </div>
+                      <div
+                        className="row"
+                        style={{ marginTop: 10, flexWrap: "wrap" }}
+                      >
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://medicaldesk.netlify.app/",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <BsPuzzle />
+                          <span>Ver Demo</span>
+                        </div>
+                        <div className="row third_section_btn">
+                          <MdOutlineViewInAr />
+                          <span>Ver proyecto</span>
+                        </div>
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://github.com/AgostinaAlvarez/Medical-Plataform",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <FiGithub />
+                          <span>Ver repositorio</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <img
+                      src={medical_plataform}
+                      style={{ width: "100%", borderRadius: "15px" }}
+                    />
+                  </div>
+                </div>
+                {/*card 2*/}
+                <div className="section_proyect_content_card">
                   <div className="second_section_content_info_content">
                     <div className="icon_container">
                       <div className="icon">
@@ -296,86 +391,16 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="second_section_content_card_right_col">
+                  <div>
                     <img
                       src={social_media_img}
                       style={{ width: "100%", borderRadius: "15px" }}
                     />
                   </div>
                 </div>
-                {/*card 2*/}
-                <div className="second_section_content_card">
-                  <div className="second_section_content_info_content">
-                    <div className="icon_container">
-                      <div className="icon">
-                        <FaHandHoldingMedical />
-                      </div>
-                    </div>
-                    <div className="second_section_content_info">
-                      <span className="card-ttl">
-                        Gestor de Hisotriales Clinicos
-                      </span>
-                      <span className="sub-ttl" style={{ width: "80%" }}>
-                        Una ERP que le permite al profesional de la salud
-                        gestionar pacientes
-                      </span>
-                      <p className="paragraph" style={{ width: "90%" }}>
-                        Este proyecto es una red social que incluye su version
-                        mobile y su version web. Incluye un chat en tiempo real
-                        con amigos y solicitudes de mensajes, post y feed
-                        personalizado con recomendaciones
-                      </p>
-                      <div
-                        className="row"
-                        style={{
-                          gap: "7px",
-                          width: "80%",
 
-                          flexWrap: "wrap",
-                        }}
-                      >
-                        <div className="row third_section_span_container">
-                          <SiFastapi />
-                          <span>FastApi</span>
-                        </div>
-                        <div className="row third_section_span_container">
-                          <AiOutlinePython />
-                          <span>Python</span>
-                        </div>
-                        <div className="row third_section_span_container">
-                          <FaReact />
-                          <span>React</span>
-                        </div>
-                        <div className="row third_section_span_container">
-                          <IoLogoJavascript />
-                          <span>Javascript</span>
-                        </div>
-                        <div className="row third_section_span_container">
-                          <GrMysql />
-                          <span>MySQL</span>
-                        </div>
-                      </div>
-                      <div className="row" style={{ marginTop: 10 }}>
-                        <div className="row third_section_btn">
-                          <MdOutlineViewInAr />
-                          <span>Ver proyecto</span>
-                        </div>
-                        <div className="row third_section_btn">
-                          <FiGithub />
-                          <span>Ver repositorio</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="second_section_content_card_right_col">
-                    <img
-                      src={medical_plataform}
-                      style={{ width: "100%", borderRadius: "15px" }}
-                    />
-                  </div>
-                </div>
                 {/*card 3*/}
-                <div className="second_section_content_card">
+                <div className="section_proyect_content_card">
                   <div className="second_section_content_info_content">
                     <div className="icon_container">
                       <div className="icon">
@@ -431,84 +456,11 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="second_section_content_card_right_col">
+                  <div>
                     <img
                       src={viti_plataform}
                       style={{ width: "100%", borderRadius: "15px" }}
                     />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          {/*Certifications*/}
-          <section className="second_section">
-            <div className="second_section_container" style={{ width: "75%" }}>
-              <div className="row second_section_ttl">
-                <LiaCertificateSolid style={{ color: "#fff" }} />
-                <span>Cerfificados</span>
-              </div>
-
-              <div className="cetificate_container">
-                <div className="certificate_content_card">
-                  <div className="certificate_icon">
-                    <AiOutlineSafetyCertificate />
-                  </div>
-                  <div className="certificate_info">
-                    <span className="certificate_ttl">Data Analytics</span>
-                    <span className="certificate_subttl">Coder House</span>
-                    <div className="row certificate_btn third_section_btn">
-                      <MdOutlineViewInAr />
-                      <span>Ver certificado</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="certificate_content_card">
-                  <div className="certificate_icon">
-                    <AiOutlineSafetyCertificate />
-                  </div>
-                  <div className="certificate_info">
-                    <span className="certificate_ttl">
-                      Back End Development and APIs
-                    </span>
-                    <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
-                      <MdOutlineViewInAr />
-                      <span>Ver certificado</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="certificate_content_card">
-                  <div className="certificate_icon">
-                    <AiOutlineSafetyCertificate />
-                  </div>
-                  <div className="certificate_info">
-                    <span className="certificate_ttl">
-                      JavaScript Algorithms and Data Structures
-                    </span>
-                    <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
-                      <MdOutlineViewInAr />
-                      <span>Ver certificado</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="certificate_content_card">
-                  <div className="certificate_icon">
-                    <AiOutlineSafetyCertificate />
-                  </div>
-                  <div className="certificate_info">
-                    <span className="certificate_ttl">
-                      Responsive Web Design
-                    </span>
-                    <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
-                      <MdOutlineViewInAr />
-                      <span>Ver certificado</span>
-                    </div>
                   </div>
                 </div>
               </div>
