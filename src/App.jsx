@@ -69,7 +69,7 @@ function App() {
         <main className="main">
           <div className="hero">Header</div>
           {/*Skills section*/}
-          <CarouselTest />
+
           {/*
             <CarouseComponent />
             */}
@@ -239,8 +239,8 @@ function App() {
                 <IoMdCode style={{ color: "#fff" }} />
                 <span>Proyectos</span>
               </div>
-
-              <div className="second_section_content_container">
+              <CarouselTest />
+              <div className="second_section_content_container project_section_content_container">
                 {/*card 1*/}
 
                 <div className="section_proyect_content_card">
