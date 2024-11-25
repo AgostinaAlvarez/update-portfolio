@@ -40,6 +40,8 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { MdOutlineTranslate } from "react-icons/md";
 import { BsPuzzle } from "react-icons/bs";
+import CarouseComponent from "./CarouseComponent";
+import CarouselTest from "./CarouselTest";
 
 function App() {
   return (
@@ -67,6 +69,10 @@ function App() {
         <main className="main">
           <div className="hero">Header</div>
           {/*Skills section*/}
+          <CarouselTest />
+          {/*
+            <CarouseComponent />
+            */}
           <section className="first_section">
             <div className="first_section_grid">
               <div className="first_section_grid_col">
