@@ -48,22 +48,30 @@ import { FaHandHoldingMedical, FaReact } from "react-icons/fa";
 import { AiOutlinePython } from "react-icons/ai";
 import { SiFastapi } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
+import {
+  MedicalPlataformDescription,
+  SocialMediaDescription,
+  VitiDescription,
+} from "./components/ProjectsComponents";
 
 const data = [
   {
     src: medical_plataform,
     title: "Night view",
     description: "4.21M views",
+    component: <MedicalPlataformDescription />,
   },
   {
     src: social_media_img,
     title: "Lake view",
     description: "4.74M views",
+    component: <SocialMediaDescription />,
   },
   {
     src: viti_plataform,
     title: "Mountain view",
     description: "3.98M views",
+    component: <VitiDescription />,
   },
 ];
 
@@ -124,94 +132,98 @@ export default function Carousel() {
       >
         {data.map((item, index) => (
           <div className="carousel-item" key={index}>
-            <img src={item.src} alt={item.title} className="carousel-image" />
-            <div className="carousel-content">
-              <div className="second_section_content_info_content">
-                <div className="icon_container">
-                  <div className="icon">
-                    <FaHandHoldingMedical />
+            {/*
+                <img src={item.src} alt={item.title} className="carousel-image" />
+                <div className="carousel-content">
+                  <div className="second_section_content_info_content">
+                    <div className="icon_container">
+                      <div className="icon">
+                        <FaHandHoldingMedical />
+                      </div>
+                    </div>
+                    <div className="second_section_content_info">
+                      <span className="card-ttl">
+                        Gestor de Hisotriales Clinicos
+                      </span>
+                      <span className="sub-ttl" style={{ width: "80%" }}>
+                        Una ERP que le permite al profesional de la salud gestionar
+                        pacientes
+                      </span>
+                      <p className="paragraph" style={{ width: "90%" }}>
+                        Este proyecto es una red social que incluye su version
+                        mobile y su version web. Incluye un chat en tiempo real con
+                        amigos y solicitudes de mensajes, post y feed personalizado
+                        con recomendaciones
+                      </p>
+                      <div
+                        className="row"
+                        style={{
+                          gap: "7px",
+                          width: "80%",
+    
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <div className="row third_section_span_container">
+                          <SiFastapi />
+                          <span>FastApi</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <AiOutlinePython />
+                          <span>Python</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <FaReact />
+                          <span>React</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <IoLogoJavascript />
+                          <span>Javascript</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <GrMysql />
+                          <span>MySQL</span>
+                        </div>
+                      </div>
+                      <div
+                        className="row"
+                        style={{ marginTop: 10, flexWrap: "wrap" }}
+                      >
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://medicaldesk.netlify.app/",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <BsPuzzle />
+                          <span>Ver Demo</span>
+                        </div>
+                        <div className="row third_section_btn">
+                          <MdOutlineViewInAr />
+                          <span>Ver proyecto</span>
+                        </div>
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://github.com/AgostinaAlvarez/Medical-Plataform",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <FiGithub />
+                          <span>Ver repositorio</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="second_section_content_info">
-                  <span className="card-ttl">
-                    Gestor de Hisotriales Clinicos
-                  </span>
-                  <span className="sub-ttl" style={{ width: "80%" }}>
-                    Una ERP que le permite al profesional de la salud gestionar
-                    pacientes
-                  </span>
-                  <p className="paragraph" style={{ width: "90%" }}>
-                    Este proyecto es una red social que incluye su version
-                    mobile y su version web. Incluye un chat en tiempo real con
-                    amigos y solicitudes de mensajes, post y feed personalizado
-                    con recomendaciones
-                  </p>
-                  <div
-                    className="row"
-                    style={{
-                      gap: "7px",
-                      width: "80%",
-
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <div className="row third_section_span_container">
-                      <SiFastapi />
-                      <span>FastApi</span>
-                    </div>
-                    <div className="row third_section_span_container">
-                      <AiOutlinePython />
-                      <span>Python</span>
-                    </div>
-                    <div className="row third_section_span_container">
-                      <FaReact />
-                      <span>React</span>
-                    </div>
-                    <div className="row third_section_span_container">
-                      <IoLogoJavascript />
-                      <span>Javascript</span>
-                    </div>
-                    <div className="row third_section_span_container">
-                      <GrMysql />
-                      <span>MySQL</span>
-                    </div>
-                  </div>
-                  <div
-                    className="row"
-                    style={{ marginTop: 10, flexWrap: "wrap" }}
-                  >
-                    <div
-                      className="row third_section_btn"
-                      onClick={() => {
-                        window.open(
-                          "https://medicaldesk.netlify.app/",
-                          "_blank"
-                        );
-                      }}
-                    >
-                      <BsPuzzle />
-                      <span>Ver Demo</span>
-                    </div>
-                    <div className="row third_section_btn">
-                      <MdOutlineViewInAr />
-                      <span>Ver proyecto</span>
-                    </div>
-                    <div
-                      className="row third_section_btn"
-                      onClick={() => {
-                        window.open(
-                          "https://github.com/AgostinaAlvarez/Medical-Plataform",
-                          "_blank"
-                        );
-                      }}
-                    >
-                      <FiGithub />
-                      <span>Ver repositorio</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                
+                */}
+            {item.component}
           </div>
         ))}
       </div>

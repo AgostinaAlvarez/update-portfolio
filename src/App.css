@@ -372,7 +372,7 @@
 /* Elementos individuales */
 .carousel-item {
   flex: 0 0 auto; /* Evita que se colapsen */
-  width: 80%;
+  width: 93%;
   scroll-snap-align: center; /* Alinea en el centro del scroll */
   border: 8px solid #0f1725;
   box-sizing: border-box;
@@ -380,6 +380,10 @@
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   background: #0f1725;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Imagen */
