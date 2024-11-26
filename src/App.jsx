@@ -587,6 +587,79 @@ function App() {
               </div>
             </div>
           </section>
+          {/*Certifications*/}
+          <section className="second_section">
+            <div className="second_section_container certificate_section">
+              <div className="row second_section_ttl ">
+                <LiaCertificateSolid style={{ color: "#fff" }} />
+                <span>Cerfificados</span>
+              </div>
+
+              <div className="cetificate_container">
+                <div className="certificate_content_card">
+                  <div className="certificate_icon">
+                    <AiOutlineSafetyCertificate />
+                  </div>
+                  <div className="certificate_info">
+                    <span className="certificate_ttl">Data Analytics</span>
+                    <span className="certificate_subttl">Coder House</span>
+                    <div className="row certificate_btn third_section_btn">
+                      <MdOutlineViewInAr />
+                      <span>Ver certificado</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="certificate_content_card">
+                  <div className="certificate_icon">
+                    <AiOutlineSafetyCertificate />
+                  </div>
+                  <div className="certificate_info">
+                    <span className="certificate_ttl">
+                      Back End Development and APIs
+                    </span>
+                    <span className="certificate_subttl">freeCodeCamp</span>
+                    <div className="row certificate_btn third_section_btn">
+                      <MdOutlineViewInAr />
+                      <span>Ver certificado</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="certificate_content_card">
+                  <div className="certificate_icon">
+                    <AiOutlineSafetyCertificate />
+                  </div>
+                  <div className="certificate_info">
+                    <span className="certificate_ttl">
+                      JavaScript Algorithms and Data Structures
+                    </span>
+                    <span className="certificate_subttl">freeCodeCamp</span>
+                    <div className="row certificate_btn third_section_btn">
+                      <MdOutlineViewInAr />
+                      <span>Ver certificado</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="certificate_content_card">
+                  <div className="certificate_icon">
+                    <AiOutlineSafetyCertificate />
+                  </div>
+                  <div className="certificate_info">
+                    <span className="certificate_ttl">
+                      Responsive Web Design
+                    </span>
+                    <span className="certificate_subttl">freeCodeCamp</span>
+                    <div className="row certificate_btn third_section_btn">
+                      <MdOutlineViewInAr />
+                      <span>Ver certificado</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           {/*Contact section */}
           <section className="contactme_section">
             <div className="contactme_section_grid">
