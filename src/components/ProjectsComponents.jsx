@@ -155,7 +155,7 @@ export const SocialMediaDescription = () => {
               <span>Socket.IO</span>
             </div>
           </div>
-          <div className="row" style={{ marginTop: 10 }}>
+          <div className="row" style={{ marginTop: 10, flexWrap: "wrap" }}>
             <div className="row third_section_btn">
               <MdOutlineViewInAr />
               <span>Ver proyecto</span>
@@ -218,7 +218,7 @@ export const VitiDescription = () => {
               <span>Socket.IO</span>
             </div>
           </div>
-          <div className="row" style={{ marginTop: 10 }}>
+          <div className="row" style={{ marginTop: 10, flexWrap: "wrap" }}>
             <div className="row third_section_btn">
               <MdOutlineViewInAr />
               <span>Ver proyecto</span>

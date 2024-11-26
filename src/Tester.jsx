@@ -319,3 +319,107 @@ const Tester = () => {
 };
 
 export default Tester;
+
+/*
+
+
+
+function App() {
+  return (
+    <>
+      <div className="principal-structure">
+        <header className="header">
+          <span className={"header-navlink"}>Inicio</span>
+          <nav>
+            <ul className="header-ul">
+              <li>
+                <MdOutlineTranslate style={{ color: "#fff" }} />
+              </li>
+              <li>
+                <span className={"header-navlink"}>Sobre mi</span>
+              </li>
+              <li>
+                <span className={"header-navlink"}>Proyectos</span>
+              </li>
+              <li>
+                <span className={"header-navlink"}>Contactame</span>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main className="main">
+          <div className="hero">Header</div>
+          <section className="first_section">
+            <div className="first_section_grid">
+              <div className="first_section_grid_col">
+                <div className="first_section_grid_col_left_content">
+                  <span style={{ fontSize: "14px" }}>My Skills</span>
+                  <span style={{ fontSize: "40px" }}>
+                    Let's Explore Popular{" "}
+                    <span style={{ color: "#f0df70" }}>Skills</span> &
+                    Experience
+                  </span>
+                  <p className="paragraph">
+                    Here you will find a summary of my main technical skills and
+                    the tools I have worked with in both frontend and backend
+                    projects. My experience includes developing dynamic web
+                    applications, integrating databases, and implementing
+                    efficient solutions that meet each client's needs. These
+                    technologies form the foundation of my ability to create
+                    robust and scalable digital products.
+                  </p>
+                </div>
+              </div>
+              <div className="first_section_grid_col">
+                <div className="first_section_grid_col_right_content">
+                  <div className="first_section_grid_col_right_box">
+                    <img src={react_icon} style={{ height: "40px" }} />
+                    <span>React JS</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={css_icon} style={{ height: "40px" }} />
+                    <span>CSS</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={js_icon} style={{ height: "45px" }} />
+                    <span>Javascript</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={mysql_icon} style={{ height: "45px" }} />
+                    <span>MySQL</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={node_icon} style={{ height: "45px" }} />
+                    <span>Node JS</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={python_icon} style={{ height: "45px" }} />
+                    <span>Python</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={html_icon} style={{ height: "45px" }} />
+                    <span>HTML</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={type_logo} style={{ height: "45px" }} />
+                    <span>Typescript</span>
+                  </div>
+                  <div className="first_section_grid_col_right_box">
+                    <img src={mongo_icon} style={{ height: "45px" }} />
+                    <span>MongoDB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        </div>
+    </>
+    );
+}
+
+export default App;
+
+
+
+*/

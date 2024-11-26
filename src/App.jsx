@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import react_icon from "../src/assets/React-icon.png";
 import css_icon from "../src/assets/css-icon.png";
@@ -42,8 +39,91 @@ import { MdOutlineTranslate } from "react-icons/md";
 import { BsPuzzle } from "react-icons/bs";
 import CarouseComponent from "./CarouseComponent";
 import CarouselTest from "./CarouselTest";
+import { useEffect } from "react";
+import { Typewriter } from "react-simple-typewriter";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
+
+import profileImg from "../src/assets/profile-img.jpg";
+
+import TextField from "@mui/material/TextField";
+import { outlinedInputClasses } from "@mui/material/OutlinedInput";
+import Box from "@mui/material/Box";
+import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
+import { Input } from "antd";
+import TextArea from "antd/es/input/TextArea";
+
+const customTheme = (outerTheme) =>
+  createTheme({
+    palette: {
+      mode: outerTheme.palette.mode,
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            "--TextField-brandBorderColor": "#E0E3E7",
+            "--TextField-brandBorderHoverColor": "#B2BAC2",
+            "--TextField-brandBorderFocusedColor": "#6F7E8C",
+            "& label.Mui-focused": {
+              color: "var(--TextField-brandBorderFocusedColor)",
+            },
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            borderColor: "var(--TextField-brandBorderColor)",
+          },
+          root: {
+            [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+              borderColor: "var(--TextField-brandBorderHoverColor)",
+            },
+            [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
+              borderColor: "var(--TextField-brandBorderFocusedColor)",
+            },
+          },
+        },
+      },
+      MuiFilledInput: {
+        styleOverrides: {
+          root: {
+            "&::before, &::after": {
+              borderBottom: "2px solid var(--TextField-brandBorderColor)",
+            },
+            "&:hover:not(.Mui-disabled, .Mui-error):before": {
+              borderBottom: "2px solid var(--TextField-brandBorderHoverColor)",
+            },
+            "&.Mui-focused:after": {
+              borderBottom:
+                "2px solid var(--TextField-brandBorderFocusedColor)",
+            },
+          },
+        },
+      },
+      MuiInput: {
+        styleOverrides: {
+          root: {
+            "&::before": {
+              borderBottom: "2px solid var(--TextField-brandBorderColor)",
+            },
+            "&:hover:not(.Mui-disabled, .Mui-error):before": {
+              borderBottom: "2px solid var(--TextField-brandBorderHoverColor)",
+            },
+            "&.Mui-focused:after": {
+              borderBottom:
+                "2px solid var(--TextField-brandBorderFocusedColor)",
+            },
+          },
+        },
+      },
+    },
+  });
 
 function App() {
+  const outerTheme = useTheme();
   return (
     <>
       <div className="principal-structure">
@@ -67,12 +147,43 @@ function App() {
           </nav>
         </header>
         <main className="main">
-          <div className="hero">Header</div>
+          <section className="hero">
+            <div className="hero-content">
+              <div className="hero-col">
+                <div className=" hero-left-col">
+                  <h1 className="hero-ttl">Hi I'm Agos</h1>
+                  <h2 className="hero-subttl">
+                    I am a{" "}
+                    <span style={{ color: "#F9E400", fontWeight: "bold" }}>
+                      <Typewriter
+                        words={[
+                          "Full Stack Developer",
+                          "Frontend Developer",
+                          "Backend Developer",
+                          "Data Analist",
+                        ]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                      />
+                    </span>
+                  </h2>
+                  <div className="hero-row">
+                    <FaGithub />
+                    <FaLinkedin />
+                    <BiLogoGmail />
+                  </div>
+                </div>
+              </div>
+              <div className="hero-col hero-right-col">
+                <img src={profileImg} className="hero-profile" />
+              </div>
+            </div>
+          </section>
           {/*Skills section*/}
-
-          {/*
-            <CarouseComponent />
-            */}
           <section className="first_section">
             <div className="first_section_grid">
               <div className="first_section_grid_col">
@@ -80,8 +191,13 @@ function App() {
                   <span style={{ fontSize: "14px" }}>My Skills</span>
                   <span style={{ fontSize: "40px" }}>
                     Let's Explore Popular{" "}
-                    <span style={{ color: "#f0df70" }}>Skills</span> &
-                    Experience
+                    <span
+                      className="span-animated"
+                      //style={{ color: "#f0df70" }}
+                    >
+                      Skills
+                    </span>{" "}
+                    & Experience
                   </span>
                   <p className="paragraph">
                     Here you will find a summary of my main technical skills and
@@ -146,7 +262,7 @@ function App() {
               <div className="second_section_content_container">
                 {/*card*/}
                 <div
-                  className="second_section_content_card"
+                  className="second_section_content_card box"
                   style={{ gridTemplateColumns: "1fr auto", gap: "20px" }}
                 >
                   <div className="second_section_content_info_content">
@@ -194,7 +310,7 @@ function App() {
                   </div>
                 </div>
                 {/*card 2*/}
-                <div className="second_section_content_card">
+                <div className="second_section_content_card box">
                   <div className="second_section_content_info_content">
                     <div className="icon_container">
                       <div className="icon">
@@ -231,7 +347,6 @@ function App() {
               </div>
             </div>
           </section>
-
           {/*My Project section*/}
           <section className="second_section">
             <div className="second_section_container">
@@ -467,6 +582,63 @@ function App() {
                       src={viti_plataform}
                       style={{ width: "100%", borderRadius: "15px" }}
                     />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/*Contact section */}
+          <section className="contactme_section">
+            <div className="contactme_section_grid">
+              <div className="contactme_section_grid_col contactme_section_grid_col_left_content">
+                <form className="contact-form">
+                  <span>Contact Me</span>
+
+                  <div className="contact-form-row">
+                    <div className="contact-form-item">
+                      <label>Name</label>
+                      <Input />
+                    </div>
+
+                    <div className="contact-form-item">
+                      <label>Name</label>
+                      <Input />
+                    </div>
+                  </div>
+                  <div className="contact-form-item">
+                    <label>Name</label>
+                    <Input />
+                  </div>
+
+                  <div className="contact-form-item">
+                    <label>Name</label>
+                    <Input />
+                  </div>
+
+                  <div className="contact-form-item ">
+                    <label>Message</label>
+                    <TextArea />
+                  </div>
+                </form>
+              </div>
+              <div className="contactme_section_grid_col contactme_section_grid_col_right_content">
+                <div
+                  style={{
+                    width: "100%",
+                    height: 270,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div className="cube">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                   </div>
                 </div>
               </div>
