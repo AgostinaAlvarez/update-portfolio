@@ -42,7 +42,9 @@ import medical_plataform from "../src/assets/medesk.png";
 import viti_plataform from "../src/assets/viti-principal-image.png";
 
 import {
+  ApifyDescription,
   MedicalPlataformDescription,
+  RifaClubDescription,
   SocialMediaDescription,
   VitiDescription,
 } from "./components/ProjectsComponents";
@@ -60,12 +62,27 @@ const data = [
     description: "4.74M views",
     component: <SocialMediaDescription />,
   },
+
+  {
+    src: social_media_img,
+    title: "Lake view",
+    description: "4.74M views",
+    component: <ApifyDescription />,
+  },
+  {
+    src: social_media_img,
+    title: "Lake view",
+    description: "4.74M views",
+    component: <RifaClubDescription />,
+  },
+  /*
   {
     src: viti_plataform,
     title: "Mountain view",
     description: "3.98M views",
     component: <VitiDescription />,
   },
+  */
 ];
 
 export default function Carousel() {

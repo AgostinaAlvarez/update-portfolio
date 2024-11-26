@@ -16,9 +16,11 @@ import { MdWorkOutline } from "react-icons/md";
 import social_media_img from "../src/assets/social-media-principal-image.png";
 import medical_plataform from "../src/assets/medesk.png";
 import viti_plataform from "../src/assets/viti-principal-image.png";
+import rifa_plataform from "../src/assets/rifaclub.png";
+import appify from "../src/assets/appify1.png";
 
 ///iconos
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaWhatsapp } from "react-icons/fa";
 import { AiOutlinePython } from "react-icons/ai";
 import { BiLogoMongodb } from "react-icons/bi";
 import { FaNodeJs } from "react-icons/fa";
@@ -39,11 +41,13 @@ import { MdOutlineTranslate } from "react-icons/md";
 import { BsPuzzle } from "react-icons/bs";
 import CarouseComponent from "./CarouseComponent";
 import CarouselTest from "./CarouselTest";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import { IoMdPricetags } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
 
 import profileImg from "../src/assets/profile-img.jpg";
 
@@ -51,102 +55,76 @@ import TextField from "@mui/material/TextField";
 import { outlinedInputClasses } from "@mui/material/OutlinedInput";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
-import { Input } from "antd";
+import { Button, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
-
-const customTheme = (outerTheme) =>
-  createTheme({
-    palette: {
-      mode: outerTheme.palette.mode,
-    },
-    components: {
-      MuiTextField: {
-        styleOverrides: {
-          root: {
-            "--TextField-brandBorderColor": "#E0E3E7",
-            "--TextField-brandBorderHoverColor": "#B2BAC2",
-            "--TextField-brandBorderFocusedColor": "#6F7E8C",
-            "& label.Mui-focused": {
-              color: "var(--TextField-brandBorderFocusedColor)",
-            },
-          },
-        },
-      },
-      MuiOutlinedInput: {
-        styleOverrides: {
-          notchedOutline: {
-            borderColor: "var(--TextField-brandBorderColor)",
-          },
-          root: {
-            [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
-              borderColor: "var(--TextField-brandBorderHoverColor)",
-            },
-            [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
-              borderColor: "var(--TextField-brandBorderFocusedColor)",
-            },
-          },
-        },
-      },
-      MuiFilledInput: {
-        styleOverrides: {
-          root: {
-            "&::before, &::after": {
-              borderBottom: "2px solid var(--TextField-brandBorderColor)",
-            },
-            "&:hover:not(.Mui-disabled, .Mui-error):before": {
-              borderBottom: "2px solid var(--TextField-brandBorderHoverColor)",
-            },
-            "&.Mui-focused:after": {
-              borderBottom:
-                "2px solid var(--TextField-brandBorderFocusedColor)",
-            },
-          },
-        },
-      },
-      MuiInput: {
-        styleOverrides: {
-          root: {
-            "&::before": {
-              borderBottom: "2px solid var(--TextField-brandBorderColor)",
-            },
-            "&:hover:not(.Mui-disabled, .Mui-error):before": {
-              borderBottom: "2px solid var(--TextField-brandBorderHoverColor)",
-            },
-            "&.Mui-focused:after": {
-              borderBottom:
-                "2px solid var(--TextField-brandBorderFocusedColor)",
-            },
-          },
-        },
-      },
-    },
-  });
+import { FaPhoneAlt } from "react-icons/fa";
+import zIndex from "@mui/material/styles/zIndex";
 
 function App() {
-  const outerTheme = useTheme();
+  const [hideIcon, setHideIcon] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideIcon(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       <div className="principal-structure">
         <header className="header">
-          <span className={"header-navlink"}>Inicio</span>
-          <nav>
-            <ul className="header-ul">
-              <li>
-                <MdOutlineTranslate style={{ color: "#fff" }} />
-              </li>
-              <li>
-                <span className={"header-navlink"}>Sobre mi</span>
-              </li>
-              <li>
-                <span className={"header-navlink"}>Proyectos</span>
-              </li>
-              <li>
-                <span className={"header-navlink"}>Contactame</span>
-              </li>
-            </ul>
-          </nav>
+          <div>
+            <a className="a" href="#experience">
+              Experience
+            </a>
+          </div>
+          <div>
+            <a className="a" href="#projects">
+              Projects
+            </a>
+          </div>
+          <div>
+            <a className="a" href="#certificates">
+              Certificates
+            </a>
+          </div>
+          <div>
+            <a className="a" href="#contact">
+              Contact Me
+            </a>
+          </div>
         </header>
         <main className="main">
+          {/*whatsap icon*/}
+          {hideIcon ? (
+            <></>
+          ) : (
+            <div
+              className="whatsapp_icon"
+              onClick={() => {
+                window.open(
+                  "https://api.whatsapp.com/send/?phone=2615658886&text&type=phone_number&app_absent=0",
+                  "_blank"
+                );
+              }}
+            >
+              <FaWhatsapp />
+            </div>
+          )}
           <section className="hero">
             <div className="hero-content">
               <div className="hero-col">
@@ -253,11 +231,11 @@ function App() {
             </div>
           </section>
           {/*My experience section*/}
-          <section className="second_section">
+          <section className="second_section" id="experience">
             <div className="second_section_container">
               <div className="row second_section_ttl">
                 <MdWorkOutline style={{ color: "#fff" }} />
-                <span>Experiencia</span>
+                <span>Work Experience</span>
               </div>
               <div className="second_section_content_container">
                 {/*card*/}
@@ -348,11 +326,11 @@ function App() {
             </div>
           </section>
           {/*My Project section*/}
-          <section className="second_section">
+          <section className="second_section" id="projects">
             <div className="second_section_container">
               <div className="row second_section_ttl">
                 <IoMdCode style={{ color: "#fff" }} />
-                <span>Proyectos</span>
+                <span>Projects</span>
               </div>
               <CarouselTest />
               <div className="second_section_content_container project_section_content_container">
@@ -519,8 +497,196 @@ function App() {
                     />
                   </div>
                 </div>
+                {/*card de appify*/}
+                <div className="section_proyect_content_card">
+                  <div className="second_section_content_info_content">
+                    <div className="icon_container">
+                      <div className="icon">
+                        <IoMdPricetags />
+                      </div>
+                    </div>
+                    <div className="second_section_content_info">
+                      <span className="card-ttl">ERP para facturacion</span>
+                      <span className="sub-ttl" style={{ width: "80%" }}>
+                        Una ERP que le permite al profesional de la salud
+                        gestionar pacientes
+                      </span>
+                      <p className="paragraph" style={{ width: "90%" }}>
+                        Este proyecto es una red social que incluye su version
+                        mobile y su version web. Incluye un chat en tiempo real
+                        con amigos y solicitudes de mensajes, post y feed
+                        personalizado con recomendaciones
+                      </p>
+                      <div
+                        className="row"
+                        style={{
+                          gap: "7px",
+                          width: "80%",
+
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <div className="row third_section_span_container">
+                          <SiFastapi />
+                          <span>FastApi</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <AiOutlinePython />
+                          <span>Python</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <FaReact />
+                          <span>React</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <IoLogoJavascript />
+                          <span>Javascript</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <GrMysql />
+                          <span>MySQL</span>
+                        </div>
+                      </div>
+                      <div
+                        className="row"
+                        style={{ marginTop: 10, flexWrap: "wrap" }}
+                      >
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://medicaldesk.netlify.app/",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <BsPuzzle />
+                          <span>Ver Demo</span>
+                        </div>
+                        <div className="row third_section_btn">
+                          <MdOutlineViewInAr />
+                          <span>Ver proyecto</span>
+                        </div>
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://github.com/AgostinaAlvarez/Medical-Plataform",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <FiGithub />
+                          <span>Ver repositorio</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <img
+                      src={appify}
+                      style={{ width: "100%", borderRadius: "15px" }}
+                    />
+                  </div>
+                </div>
+                {/*card de rifa*/}
+
+                <div className="section_proyect_content_card">
+                  <div className="second_section_content_info_content">
+                    <div className="icon_container">
+                      <div className="icon">
+                        <IoMdPricetags />
+                      </div>
+                    </div>
+                    <div className="second_section_content_info">
+                      <span className="card-ttl">
+                        Plataforma de suscripcion a sorteos mensuales
+                      </span>
+                      <span className="sub-ttl" style={{ width: "80%" }}>
+                        Una ERP que le permite al profesional de la salud
+                        gestionar pacientes
+                      </span>
+                      <p className="paragraph" style={{ width: "90%" }}>
+                        Este proyecto es una red social que incluye su version
+                        mobile y su version web. Incluye un chat en tiempo real
+                        con amigos y solicitudes de mensajes, post y feed
+                        personalizado con recomendaciones
+                      </p>
+                      <div
+                        className="row"
+                        style={{
+                          gap: "7px",
+                          width: "80%",
+
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <div className="row third_section_span_container">
+                          <SiFastapi />
+                          <span>FastApi</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <AiOutlinePython />
+                          <span>Python</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <FaReact />
+                          <span>React</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <IoLogoJavascript />
+                          <span>Javascript</span>
+                        </div>
+                        <div className="row third_section_span_container">
+                          <GrMysql />
+                          <span>MySQL</span>
+                        </div>
+                      </div>
+                      <div
+                        className="row"
+                        style={{ marginTop: 10, flexWrap: "wrap" }}
+                      >
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://medicaldesk.netlify.app/",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <BsPuzzle />
+                          <span>Ver Demo</span>
+                        </div>
+                        <div className="row third_section_btn">
+                          <MdOutlineViewInAr />
+                          <span>Ver proyecto</span>
+                        </div>
+                        <div
+                          className="row third_section_btn"
+                          onClick={() => {
+                            window.open(
+                              "https://github.com/AgostinaAlvarez/Medical-Plataform",
+                              "_blank"
+                            );
+                          }}
+                        >
+                          <FiGithub />
+                          <span>Ver repositorio</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <img
+                      src={rifa_plataform}
+                      style={{ width: "100%", borderRadius: "15px" }}
+                    />
+                  </div>
+                </div>
 
                 {/*card 3*/}
+                {/*
                 <div className="section_proyect_content_card">
                   <div className="second_section_content_info_content">
                     <div className="icon_container">
@@ -584,15 +750,16 @@ function App() {
                     />
                   </div>
                 </div>
+                  */}
               </div>
             </div>
           </section>
           {/*Certifications*/}
-          <section className="second_section">
+          <section className="second_section" id="certificates">
             <div className="second_section_container certificate_section">
               <div className="row second_section_ttl ">
                 <LiaCertificateSolid style={{ color: "#fff" }} />
-                <span>Cerfificados</span>
+                <span>Certifications</span>
               </div>
 
               <div className="cetificate_container">
@@ -603,7 +770,15 @@ function App() {
                   <div className="certificate_info">
                     <span className="certificate_ttl">Data Analytics</span>
                     <span className="certificate_subttl">Coder House</span>
-                    <div className="row certificate_btn third_section_btn">
+                    <div
+                      className="row certificate_btn third_section_btn"
+                      onClick={() => {
+                        window.open(
+                          "https://www.coderhouse.com/cl/certificados/650356406473d4b43f969fc7?lang=es",
+                          "_blank"
+                        );
+                      }}
+                    >
                       <MdOutlineViewInAr />
                       <span>Ver certificado</span>
                     </div>
@@ -619,7 +794,15 @@ function App() {
                       Back End Development and APIs
                     </span>
                     <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
+                    <div
+                      className="row certificate_btn third_section_btn"
+                      onClick={() => {
+                        window.open(
+                          "https://www.freecodecamp.org/certification/fcc6f507e86-2390-4483-8447-505a4a0db0a6/back-end-development-and-apis",
+                          "_blank"
+                        );
+                      }}
+                    >
                       <MdOutlineViewInAr />
                       <span>Ver certificado</span>
                     </div>
@@ -635,7 +818,15 @@ function App() {
                       JavaScript Algorithms and Data Structures
                     </span>
                     <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
+                    <div
+                      className="row certificate_btn third_section_btn"
+                      onClick={() => {
+                        window.open(
+                          "https://www.freecodecamp.org/certification/fcc6f507e86-2390-4483-8447-505a4a0db0a6/javascript-algorithms-and-data-structures",
+                          "_blank"
+                        );
+                      }}
+                    >
                       <MdOutlineViewInAr />
                       <span>Ver certificado</span>
                     </div>
@@ -651,7 +842,15 @@ function App() {
                       Responsive Web Design
                     </span>
                     <span className="certificate_subttl">freeCodeCamp</span>
-                    <div className="row certificate_btn third_section_btn">
+                    <div
+                      className="row certificate_btn third_section_btn"
+                      onClick={() => {
+                        window.open(
+                          "https://www.freecodecamp.org/certification/fcc6f507e86-2390-4483-8447-505a4a0db0a6/responsive-web-design",
+                          "_blank"
+                        );
+                      }}
+                    >
                       <MdOutlineViewInAr />
                       <span>Ver certificado</span>
                     </div>
@@ -661,62 +860,89 @@ function App() {
             </div>
           </section>
           {/*Contact section */}
-          <section className="contactme_section">
-            <div className="contactme_section_grid">
-              <div className="contactme_section_grid_col contactme_section_grid_col_left_content">
-                <form className="contact-form">
-                  <span>Contact Me</span>
+          <div ref={sectionRef}>
+            <section className="contactme_section" id="contact">
+              <div className="contactme_section_grid">
+                <div className="contactme_section_grid_col contactme_section_grid_col_left_content">
+                  <form className="contact-form">
+                    <span>Send Me a Message</span>
 
-                  <div className="contact-form-row">
-                    <div className="contact-form-item">
-                      <label>Name</label>
-                      <Input />
+                    <div className="contact-form-row">
+                      <div className="contact-form-item">
+                        <label>Name</label>
+                        <Input />
+                      </div>
+
+                      <div className="contact-form-item">
+                        <label>Last Name</label>
+                        <Input />
+                      </div>
                     </div>
 
                     <div className="contact-form-item">
-                      <label>Name</label>
+                      <label>Email</label>
                       <Input />
                     </div>
-                  </div>
-                  <div className="contact-form-item">
-                    <label>Name</label>
-                    <Input />
-                  </div>
 
-                  <div className="contact-form-item">
-                    <label>Name</label>
-                    <Input />
-                  </div>
-
-                  <div className="contact-form-item ">
-                    <label>Message</label>
-                    <TextArea />
-                  </div>
-                </form>
-              </div>
-              <div className="contactme_section_grid_col contactme_section_grid_col_right_content">
-                <div
-                  style={{
-                    width: "100%",
-                    height: 270,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div className="cube">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div className="contact-form-item ">
+                      <label>Message</label>
+                      <TextArea />
+                    </div>
+                    <Button type="primary">Send</Button>
+                  </form>
+                </div>
+                <div className="contactme_section_grid_col contactme_section_grid_col_right_content">
+                  <div
+                    style={{
+                      width: "100%",
+                      height: 270,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <div className="cube">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            {/*Contact information*/}
+            <section className="contact_information">
+              <div className="contact_information_left_col">
+                <div className="contact_information_left_col_item">
+                  <div className="footer-icon footer-icon-responsive">
+                    <IoMdMail />
+                  </div>
+                  <span>agosalvarezz1999@gmail.com</span>
+                </div>
+                <div className="contact_information_left_col_item">
+                  <div className="footer-icon footer-icon-responsive">
+                    <FaPhoneAlt />
+                  </div>
+                  <span>+54 261 5658886</span>
+                </div>
+              </div>
+              <div className="contact_information_right_col">
+                <div className="footer-icon">
+                  <FiGithub />
+                </div>
+                <div className="footer-icon">
+                  <FaLinkedin />
+                </div>
+                <div className="footer-icon">
+                  <BiLogoGmail />
+                </div>
+              </div>
+            </section>
+          </div>
         </main>
       </div>
     </>
