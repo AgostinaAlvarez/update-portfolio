@@ -811,7 +811,7 @@
 
 @media screen and (max-width: 780px) {
   .hero {
-    height: fit-content;
+    min-height: 100vh;
   }
 
   .hero-content {
